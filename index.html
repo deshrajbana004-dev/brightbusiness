@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BrightBusiness | Grow Your Business</title>
+    <meta name="description"
+          content="BrightBusiness helps businesses grow with professional services and customer-focused solutions.">
+
+    <style>
+        /* 1. Basic settings */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #1e293b;
+            line-height: 1.6;
+            background: #f8fafc;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* 2. Navigation bar */
+        nav {
+            background: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 2px 10px #0000000d;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
+        .nav-links a {
+            color: #334155;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        /* 3. Main section */
+        .hero {
+            background: linear-gradient(135deg, #dbeafe, #eff6ff);
+            padding: 100px 8%;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 54px);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 0 auto 28px;
+            color: #475569;
+            font-size: 18px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 13px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+        }
+
+        /* 4. Common sections */
+        .section {
+            padding: 75px 8%;
+            text-align: center;
+            scroll-margin-top: 80px;
+        }
+
+        .section h2 {
+            font-size: 34px;
+            margin-bottom: 14px;
+        }
+
+        .intro {
+            color: #64748b;
+            max-width: 650px;
+            margin: 0 auto 35px;
+        }
+
+        /* 5. Service cards */
+        .services {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+            text-align: left;
+        }
+
+        .service-card {
+            background: white;
+            padding: 28px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px #0000000a;
+        }
+
+        .service-card h3 {
+            color: #2563eb;
+            margin-bottom: 12px;
+        }
+
+        /* 6. About section */
+        #about {
+            background: white;
+        }
+
+        .about-text {
+            max-width: 750px;
+            margin: auto;
+            color: #475569;
+        }
+
+        /* 7. Contact section */
+        .contact-box {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 28px;
+            border-radius: 12px;
+            text-align: left;
+        }
+
+        .contact-box label {
+            display: block;
+            margin: 14px 0 5px;
+            font-weight: bold;
+        }
+
+        .contact-box input,
+        .contact-box textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font: inherit;
+        }
+
+        .contact-box textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-box button {
+            margin-top: 18px;
+        }
+
+        /* 8. Footer */
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 28px 8%;
+            text-align: center;
+        }
+
+        footer a {
+            color: #93c5fd;
+        }
+
+        /* 9. Mobile-friendly layout */
+        @media (max-width: 600px) {
+            nav {
+                padding: 15px 5%;
+                flex-direction: column;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .hero {
+                padding: 65px 5%;
+            }
+
+            .section {
+                padding: 55px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a class="logo" href="#home">BrightBusiness</a>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero" id="home">
+            <h1>Grow Your Business With Confidence</h1>
+
+            <p>
+                We help businesses improve their online presence
+                and connect with more customers.
+            </p>
+
+            <a class="btn" href="#services">Explore Our Services</a>
+        </section>
+
+        <section class="section" id="services">
+            <h2>Our Services</h2>
+
+            <p class="intro">
+                Practical solutions designed around your business needs.
+            </p>
+
+            <div class="services">
+                <article class="service-card">
+                    <h3>Web Design</h3>
+                    <p>
+                        Professional, attractive and mobile-friendly
+                        websites for your business.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <h3>Digital Marketing</h3>
+                    <p>
+                        Help your business reach more people
+                        through online marketing.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <h3>Business Consulting</h3>
+                    <p>
+                        Organize your ideas and identify
+                        opportunities to improve your business.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="about">
+            <h2>About Our Business</h2>
+
+            <p class="about-text">
+                BrightBusiness is a sample business website.
+                We believe in clear communication, useful solutions
+                and building long-term customer relationships.
+                Replace this paragraph with your real company story.
+            </p>
+        </section>
+
+        <section class="section" id="contact">
+            <h2>Contact Us</h2>
+
+            <p class="intro">
+                Have a question? Send us an enquiry.
+            </p>
+
+            <form class="contact-box" id="contactForm">
+                <label for="name">Your Name</label>
+                <input id="name" name="name" required
+                       placeholder="Enter your name">
+
+                <label for="email">Your Email</label>
+                <input id="email" name="email"
+                       type="email" required
+                       placeholder="Enter your email">
+
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message"
+                          required
+                          placeholder="How can we help?"></textarea>
+
+                <button class="btn" type="submit">
+                    Send Enquiry
+                </button>
+
+                <p id="formStatus" role="status"
+                   aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 BrightBusiness. All rights reserved.</p>
+        <p>Replace this sample content with your business details.</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById("contactForm");
+        const status = document.getElementById("formStatus");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            const businessEmail = "dineshbana006@gmail.com";
+
+            const subject = encodeURIComponent(
+                "Website enquiry from " + name
+            );
+
+            const body = encodeURIComponent(
+                "Name: " + name +
+                "\nEmail: " + email +
+                "\nMessage: " + message
+            );
+
+            status.textContent =
+                "Opening your email application...";
+
+            window.location.href =
+                "mailto:" + businessEmail +
+                "?subject=" + subject +
+                "&body=" + body;
+        });
+    </script>
+
+</body>
+</html>
