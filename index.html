@@ -2,364 +2,932 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>BrightBusiness | Grow Your Business</title>
-    <meta name="description"
-          content="BrightBusiness helps businesses grow with professional services and customer-focused solutions.">
+  <title>BrightBusiness | Digital Solutions for Growth</title>
+  <meta name="description"
+    content="BrightBusiness helps businesses grow with professional web design, digital marketing and business consulting.">
+  <meta name="theme-color" content="#101126">
 
-    <style>
-        /* 1. Basic settings */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <style>
+    /* RESET AND THEME */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    :root {
+      --dark: #101126;
+      --primary: #6c63ff;
+      --accent: #a99cff;
+      --text: #20213a;
+      --muted: #686b80;
+      --light: #f7f7fc;
+      --white: #ffffff;
+      --border: #e9e8f3;
+    }
 
-        body {
-            font-family: Arial, sans-serif;
-            color: #1e293b;
-            line-height: 1.6;
-            background: #f8fafc;
-        }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
 
-        a {
-            text-decoration: none;
-        }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      background: var(--white);
+    }
 
-        /* 2. Navigation bar */
-        nav {
-            background: white;
-            padding: 18px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-            box-shadow: 0 2px 10px #0000000d;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #2563eb;
-        }
+    button, input, textarea {
+      font: inherit;
+    }
 
-        .nav-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 22px;
-        }
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
 
-        .nav-links a {
-            color: #334155;
-            font-weight: bold;
-        }
+    .section {
+      padding: 90px 0;
+    }
 
-        .nav-links a:hover {
-            color: #2563eb;
-        }
+    .section-heading {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 45px;
+    }
 
-        /* 3. Main section */
-        .hero {
-            background: linear-gradient(135deg, #dbeafe, #eff6ff);
-            padding: 100px 8%;
-            text-align: center;
-        }
+    .eyebrow {
+      color: var(--primary);
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
 
-        .hero h1 {
-            font-size: clamp(32px, 5vw, 54px);
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
+    .section-heading h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.2;
+      margin: 12px 0;
+    }
 
-        .hero p {
-            max-width: 650px;
-            margin: 0 auto 28px;
-            color: #475569;
-            font-size: 18px;
-        }
+    .section-heading p {
+      color: var(--muted);
+    }
 
-        .btn {
-            display: inline-block;
-            background: #2563eb;
-            color: white;
-            padding: 13px 24px;
-            border-radius: 8px;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-        }
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 22px;
+      border-radius: 9px;
+      background: var(--primary);
+      color: white;
+      font-weight: 700;
+      border: 1px solid var(--primary);
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
 
-        .btn:hover {
-            background: #1d4ed8;
-        }
+    .btn:hover {
+      background: #554be8;
+      transform: translateY(-2px);
+    }
 
-        /* 4. Common sections */
-        .section {
-            padding: 75px 8%;
-            text-align: center;
-            scroll-margin-top: 80px;
-        }
+    .btn-outline {
+      background: transparent;
+      color: white;
+      border-color: #77748f;
+    }
 
-        .section h2 {
-            font-size: 34px;
-            margin-bottom: 14px;
-        }
+    .btn-outline:hover {
+      background: white;
+      color: var(--dark);
+    }
 
-        .intro {
-            color: #64748b;
-            max-width: 650px;
-            margin: 0 auto 35px;
-        }
+    /* NAVIGATION */
+    .navbar {
+      background: rgba(16, 17, 38, 0.97);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #ffffff15;
+    }
 
-        /* 5. Service cards */
-        .services {
-            display: grid;
-            grid-template-columns:
-                repeat(auto-fit, minmax(220px, 1fr));
-            gap: 22px;
-            text-align: left;
-        }
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-        .service-card {
-            background: white;
-            padding: 28px;
-            border-radius: 12px;
-            box-shadow: 0 4px 16px #0000000a;
-        }
+    .logo {
+      font-size: 23px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      white-space: nowrap;
+    }
 
-        .service-card h3 {
-            color: #2563eb;
-            margin-bottom: 12px;
-        }
+    .logo span {
+      color: var(--accent);
+    }
 
-        /* 6. About section */
-        #about {
-            background: white;
-        }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+    }
 
-        .about-text {
-            max-width: 750px;
-            margin: auto;
-            color: #475569;
-        }
+    .nav-links a {
+      color: #e3e2ef;
+      font-size: 14px;
+    }
 
-        /* 7. Contact section */
-        .contact-box {
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            padding: 28px;
-            border-radius: 12px;
-            text-align: left;
-        }
+    .nav-links a:hover {
+      color: var(--accent);
+    }
 
-        .contact-box label {
-            display: block;
-            margin: 14px 0 5px;
-            font-weight: bold;
-        }
+    .menu-toggle {
+      display: none;
+      color: white;
+      background: transparent;
+      border: 1px solid #ffffff50;
+      padding: 7px 12px;
+      border-radius: 7px;
+      cursor: pointer;
+    }
 
-        .contact-box input,
-        .contact-box textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            font: inherit;
-        }
+    /* HERO */
+    .hero {
+      color: white;
+      background:
+        radial-gradient(ellipse at 80% 25%, #6c63ff55, transparent 38%),
+        radial-gradient(ellipse at 15% 90%, #3c348544, transparent 35%),
+        var(--dark);
+      padding: 105px 0 95px;
+      overflow: hidden;
+    }
 
-        .contact-box textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 50px;
+    }
 
-        .contact-box button {
-            margin-top: 18px;
-        }
+    .hero .eyebrow {
+      color: #b6afff;
+    }
 
-        /* 8. Footer */
-        footer {
-            background: #0f172a;
-            color: white;
-            padding: 28px 8%;
-            text-align: center;
-        }
+    .hero h1 {
+      font-size: clamp(38px, 5.3vw, 62px);
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin: 18px 0;
+    }
 
-        footer a {
-            color: #93c5fd;
-        }
+    .hero h1 span {
+      color: #a99cff;
+    }
 
-        /* 9. Mobile-friendly layout */
-        @media (max-width: 600px) {
-            nav {
-                padding: 15px 5%;
-                flex-direction: column;
-            }
+    .hero-copy {
+      color: #c5c5d9;
+      font-size: 17px;
+      max-width: 570px;
+      margin-bottom: 28px;
+    }
 
-            .nav-links {
-                justify-content: center;
-                gap: 12px;
-            }
+    .hero-actions {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
 
-            .hero {
-                padding: 65px 5%;
-            }
+    .hero-note {
+      color: #b6b5cc;
+      font-size: 13px;
+      margin-top: 22px;
+    }
 
-            .section {
-                padding: 55px 5%;
-            }
-        }
-    </style>
+    /* HERO VISUAL */
+    .visual {
+      min-height: 340px;
+      border: 1px solid #ffffff24;
+      background: linear-gradient(145deg, #ffffff15, #ffffff05);
+      border-radius: 24px;
+      padding: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .visual-card {
+      width: 100%;
+      background: #ffffff;
+      color: var(--text);
+      border-radius: 18px;
+      padding: 25px;
+      box-shadow: 0 25px 70px #00000040;
+      transform: rotate(-2deg);
+    }
+
+    .visual-label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .visual-title {
+      font-size: 25px;
+      font-weight: 800;
+      margin: 5px 0 20px;
+    }
+
+    .visual-bars {
+      display: flex;
+      align-items: end;
+      height: 100px;
+      gap: 12px;
+      border-bottom: 1px solid var(--border);
+      padding: 0 8px;
+    }
+
+    .visual-bars span {
+      flex: 1;
+      border-radius: 7px 7px 0 0;
+      background: linear-gradient(#9a90ff, #6c63ff);
+    }
+
+    .visual-bars span:nth-child(1) { height: 35%; }
+    .visual-bars span:nth-child(2) { height: 52%; }
+    .visual-bars span:nth-child(3) { height: 43%; }
+    .visual-bars span:nth-child(4) { height: 72%; }
+    .visual-bars span:nth-child(5) { height: 88%; }
+
+    .visual-footer {
+      margin-top: 17px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* TRUST STRIP */
+    .trust-strip {
+      background: #f0efff;
+      padding: 23px 0;
+      text-align: center;
+      color: #484569;
+      font-weight: 700;
+    }
+
+    /* SERVICES */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 23px;
+    }
+
+    .service-card {
+      border: 1px solid var(--border);
+      padding: 29px;
+      border-radius: 16px;
+      background: white;
+      transition: 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 40px #29235d12;
+      border-color: #c8c2ff;
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      background: #efedff;
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* ABOUT */
+    .about {
+      background: var(--light);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .about h2 {
+      font-size: clamp(29px, 4vw, 42px);
+      line-height: 1.2;
+      margin: 12px 0 18px;
+    }
+
+    .about p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .benefit {
+      margin: 12px 0;
+      font-weight: 700;
+    }
+
+    .about-panel {
+      border-radius: 22px;
+      background: linear-gradient(145deg, #211d4d, #6c63ff);
+      color: white;
+      min-height: 300px;
+      padding: 38px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .about-panel .big {
+      font-size: 35px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .about-panel p {
+      color: #e3e0ff;
+    }
+
+    /* CTA */
+    .cta {
+      background: white;
+      text-align: center;
+    }
+
+    .cta-panel {
+      padding: 55px 25px;
+      border-radius: 22px;
+      background: linear-gradient(120deg, #211d4d, #5a50d9);
+      color: white;
+    }
+
+    .cta-panel h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      margin-bottom: 12px;
+    }
+
+    .cta-panel p {
+      color: #e2e0ff;
+      margin-bottom: 25px;
+    }
+
+    .cta-panel .btn {
+      background: white;
+      color: #3c32b7;
+      border-color: white;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .contact-info h3 {
+      font-size: 25px;
+      margin: 12px 0;
+    }
+
+    .contact-info p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .contact-form {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 10px 35px #25204409;
+    }
+
+    .field {
+      margin-bottom: 17px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      border: 1px solid #dcdbea;
+      border-radius: 8px;
+      padding: 13px;
+      background: #fcfcff;
+      color: var(--text);
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      outline: 2px solid #c7c2ff;
+      border-color: var(--primary);
+    }
+
+    .field textarea {
+      min-height: 125px;
+      resize: vertical;
+    }
+
+    .form-status {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 12px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: #d0cfe1;
+      padding: 30px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    footer .logo {
+      color: white;
+    }
+
+    footer p {
+      font-size: 13px;
+    }
+
+    /* WHATSAPP FLOATING BUTTON */
+    .whatsapp {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 90;
+      background: #168b51;
+      color: white;
+      border-radius: 50px;
+      padding: 12px 17px;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 6px 22px #00000025;
+    }
+
+    .whatsapp:hover {
+      background: #116c3e;
+    }
+
+    /* MOBILE */
+    @media (max-width: 850px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        gap: 35px;
+      }
+
+      .visual {
+        min-height: 290px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid {
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .section {
+        padding: 65px 0;
+      }
+
+      .nav-inner {
+        min-height: 68px;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        padding: 20px 5%;
+        background: var(--dark);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 5px 0;
+      }
+
+      .hero {
+        padding: 75px 0;
+      }
+
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+
+      .hero-copy {
+        font-size: 16px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form {
+        padding: 20px;
+      }
+
+      .about-panel {
+        min-height: 240px;
+        padding: 28px;
+      }
+
+      .whatsapp {
+        right: 12px;
+        bottom: 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <nav>
-        <a class="logo" href="#home">BrightBusiness</a>
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">Bright<span>Business.</span></a>
 
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+      <button class="menu-toggle" id="menuToggle"
+              aria-expanded="false" aria-controls="navLinks"
+              aria-label="Toggle navigation">
+        ☰ Menu
+      </button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn">Let's Talk ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Smart solutions. Real progress.</p>
+
+          <h1>Build Your Brand.<br>
+            <span>Grow Your Business.</span>
+          </h1>
+
+          <p class="hero-copy">
+            We help businesses create a stronger online presence
+            with thoughtful design, digital marketing and practical
+            business solutions.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#services" class="btn">Explore Services →</a>
+            <a href="#contact" class="btn btn-outline">Contact Us</a>
+          </div>
+
+          <p class="hero-note">
+            Professional solutions designed around your goals.
+          </p>
         </div>
-    </nav>
 
-    <main>
-        <section class="hero" id="home">
-            <h1>Grow Your Business With Confidence</h1>
-
-            <p>
-                We help businesses improve their online presence
-                and connect with more customers.
-            </p>
-
-            <a class="btn" href="#services">Explore Our Services</a>
-        </section>
-
-        <section class="section" id="services">
-            <h2>Our Services</h2>
-
-            <p class="intro">
-                Practical solutions designed around your business needs.
-            </p>
-
-            <div class="services">
-                <article class="service-card">
-                    <h3>Web Design</h3>
-                    <p>
-                        Professional, attractive and mobile-friendly
-                        websites for your business.
-                    </p>
-                </article>
-
-                <article class="service-card">
-                    <h3>Digital Marketing</h3>
-                    <p>
-                        Help your business reach more people
-                        through online marketing.
-                    </p>
-                </article>
-
-                <article class="service-card">
-                    <h3>Business Consulting</h3>
-                    <p>
-                        Organize your ideas and identify
-                        opportunities to improve your business.
-                    </p>
-                </article>
+        <div class="visual" aria-label="Illustration of business growth">
+          <div class="visual-card">
+            <p class="visual-label">YOUR NEXT CHAPTER</p>
+            <p class="visual-title">Think Bigger.</p>
+            <div class="visual-bars" aria-hidden="true">
+              <span></span><span></span><span></span>
+              <span></span><span></span>
             </div>
-        </section>
-
-        <section class="section" id="about">
-            <h2>About Our Business</h2>
-
-            <p class="about-text">
-                BrightBusiness is a sample business website.
-                We believe in clear communication, useful solutions
-                and building long-term customer relationships.
-                Replace this paragraph with your real company story.
+            <p class="visual-footer">
+              Strategy · Creativity · Progress
             </p>
-        </section>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section class="section" id="contact">
-            <h2>Contact Us</h2>
+    <div class="trust-strip">
+      Clear strategy &nbsp; • &nbsp; Creative thinking
+      &nbsp; • &nbsp; Customer-first solutions
+    </div>
 
-            <p class="intro">
-                Have a question? Send us an enquiry.
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">What We Do</p>
+          <h2>Solutions for Your Next Big Step</h2>
+          <p>
+            Practical services to help your business build,
+            connect and move forward.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">✦</div>
+            <h3>Web Design</h3>
+            <p>
+              Modern, responsive websites that introduce
+              your business and make it easy for customers
+              to learn about your services.
             </p>
+          </article>
 
-            <form class="contact-box" id="contactForm">
-                <label for="name">Your Name</label>
-                <input id="name" name="name" required
-                       placeholder="Enter your name">
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">↗</div>
+            <h3>Digital Marketing</h3>
+            <p>
+              Build your online presence with useful content,
+              a clear brand message and thoughtful marketing plans.
+            </p>
+          </article>
 
-                <label for="email">Your Email</label>
-                <input id="email" name="email"
-                       type="email" required
-                       placeholder="Enter your email">
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">◎</div>
+            <h3>Business Consulting</h3>
+            <p>
+              Organize your ideas, understand your goals
+              and identify practical opportunities for improvement.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-                <label for="message">Your Message</label>
-                <textarea id="message" name="message"
-                          required
-                          placeholder="How can we help?"></textarea>
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow">About BrightBusiness</p>
+          <h2>Good Ideas Deserve Great Execution.</h2>
 
-                <button class="btn" type="submit">
-                    Send Enquiry
-                </button>
+          <p>
+            We believe every business deserves a clear way
+            to communicate its value. Our approach combines
+            thoughtful design, useful technology and a focus
+            on customer needs.
+          </p>
 
-                <p id="formStatus" role="status"
-                   aria-live="polite"></p>
-            </form>
-        </section>
-    </main>
+          <div class="benefit">✓ Clear communication</div>
+          <div class="benefit">✓ Practical, tailored solutions</div>
+          <div class="benefit">✓ Focus on customer experience</div>
+        </div>
 
-    <footer>
-        <p>© 2026 BrightBusiness. All rights reserved.</p>
-        <p>Replace this sample content with your business details.</p>
-    </footer>
+        <div class="about-panel">
+          <p class="eyebrow">Our Approach</p>
+          <p class="big">Understand.<br>Build.<br>Improve.</p>
+          <p>
+            Start with your goals, build the right solution
+            and keep making the experience better.
+          </p>
+        </div>
+      </div>
+    </section>
 
-    <script>
-        const form = document.getElementById("contactForm");
-        const status = document.getElementById("formStatus");
+    <!-- CALL TO ACTION -->
+    <section class="section cta">
+      <div class="container">
+        <div class="cta-panel">
+          <h2>Ready to Take the Next Step?</h2>
+          <p>
+            Tell us about your business and what you want to achieve.
+          </p>
+          <a href="#contact" class="btn">Start a Conversation →</a>
+        </div>
+      </div>
+    </section>
 
-        form.addEventListener("submit", function(event) {
-            event.preventDefault();
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Get in Touch</p>
+          <h2>Let's Talk About Your Business</h2>
+          <p>
+            Share your requirements and we'll help you explore
+            the next steps.
+          </p>
+        </div>
 
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const message = document.getElementById("message").value;
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Have a project in mind?</h3>
+            <p>
+              Fill out the form with your name, email and
+              message. Your default email application will
+              open with a prepared enquiry.
+            </p>
+            <p>
+              <strong>Email:</strong><br>
+              yourbusiness@example.com
+            </p>
+            <p>
+              Replace the sample contact information with
+              your real business details before publishing.
+            </p>
+          </div>
 
-            const businessEmail = "dineshbana006@gmail.com";
+          <form class="contact-form" id="contactForm">
+            <div class="field">
+              <label for="name">Full Name</label>
+              <input id="name" name="name" required
+                     autocomplete="name"
+                     placeholder="Your name">
+            </div>
 
-            const subject = encodeURIComponent(
-                "Website enquiry from " + name
-            );
+            <div class="field">
+              <label for="email">Email Address</label>
+              <input id="email" name="email" type="email"
+                     required autocomplete="email"
+                     placeholder="you@example.com">
+            </div>
 
-            const body = encodeURIComponent(
-                "Name: " + name +
-                "\nEmail: " + email +
-                "\nMessage: " + message
-            );
+            <div class="field">
+              <label for="message">How can we help?</label>
+              <textarea id="message" name="message" required
+                        placeholder="Tell us about your project"></textarea>
+            </div>
 
-            status.textContent =
-                "Opening your email application...";
+            <button class="btn" type="submit">
+              Prepare Enquiry ↗
+            </button>
 
-            window.location.href =
-                "mailto:" + businessEmail +
-                "?subject=" + subject +
-                "&body=" + body;
-        });
-    </script>
+            <p class="form-status" id="formStatus"
+               role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <a href="#home" class="logo">Bright<span>Business.</span></a>
+      <p>© <span id="year"></span> BrightBusiness. All rights reserved.</p>
+      <p>Built with purpose.</p>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP BUTTON: UPDATE THE NUMBER IN JAVASCRIPT -->
+  <a class="whatsapp" id="whatsappLink"
+     href="https://wa.me/910000000000"
+     target="_blank" rel="noopener noreferrer">
+    WhatsApp Us ↗
+  </a>
+
+  <script>
+    // 1. Mobile navigation menu
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", isOpen);
+    });
+
+    // Close the mobile menu after clicking a navigation link
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    // 2. Automatically update the footer year
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // 3. Contact form opens a pre-filled email draft
+    const contactForm = document.getElementById("contactForm");
+    const formStatus = document.getElementById("formStatus");
+
+    // CHANGE THIS TO YOUR REAL BUSINESS EMAIL
+    const businessEmail = "yourbusiness@example.com";
+
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !email || !message) {
+        formStatus.textContent = "Please complete all fields.";
+        return;
+      }
+
+      const subject = encodeURIComponent(
+        "Business enquiry from " + name
+      );
+
+      const body = encodeURIComponent(
+        "Name: " + name +
+        "\nEmail: " + email +
+        "\nMessage: " + message
+      );
+
+      formStatus.textContent =
+        "Opening your email application. Please review and send the draft.";
+
+      window.location.href =
+        "mailto:" + businessEmail +
+        "?subject=" + subject +
+        "&body=" + body;
+    });
+
+    // 4. WhatsApp button
+    // Replace the example digits with your real WhatsApp number.
+    // Use country code + number, digits only, with no + or spaces.
+    const whatsappNumber = "910000000000";
+
+    document.getElementById("whatsappLink").href =
+      "https://wa.me/" + whatsappNumber;
+  </script>
 
 </body>
 </html>
