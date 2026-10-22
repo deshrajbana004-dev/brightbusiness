@@ -1,22 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>BrightBusiness | Digital Solutions for Growth</title>
-  <meta name="description"
-    content="BrightBusiness helps businesses grow with professional web design, digital marketing and business consulting.">
+  <meta name="description" content="BrightBusiness helps businesses grow with professional web design, digital marketing and business consulting.">
   <meta name="theme-color" content="#101126">
 
   <style>
-    /* RESET AND THEME */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
       --dark: #101126;
@@ -41,23 +33,10 @@
       background: var(--white);
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    button, input, textarea {
-      font: inherit;
-    }
-
-    .container {
-      width: min(1120px, 90%);
-      margin: auto;
-    }
-
-    .section {
-      padding: 90px 0;
-    }
+    a { text-decoration: none; color: inherit; }
+    button, input, textarea { font: inherit; }
+    .container { width: min(1120px, 90%); margin: auto; }
+    .section { padding: 90px 0; }
 
     .section-heading {
       text-align: center;
@@ -79,9 +58,7 @@
       margin: 12px 0;
     }
 
-    .section-heading p {
-      color: var(--muted);
-    }
+    .section-heading p { color: var(--muted); }
 
     .btn {
       display: inline-flex;
@@ -101,6 +78,12 @@
     .btn:hover {
       background: #554be8;
       transform: translateY(-2px);
+    }
+
+    .btn:disabled {
+      opacity: 0.65;
+      cursor: wait;
+      transform: none;
     }
 
     .btn-outline {
@@ -139,9 +122,7 @@
       white-space: nowrap;
     }
 
-    .logo span {
-      color: var(--accent);
-    }
+    .logo span { color: var(--accent); }
 
     .nav-links {
       display: flex;
@@ -154,9 +135,7 @@
       font-size: 14px;
     }
 
-    .nav-links a:hover {
-      color: var(--accent);
-    }
+    .nav-links a:hover { color: var(--accent); }
 
     .menu-toggle {
       display: none;
@@ -186,9 +165,7 @@
       gap: 50px;
     }
 
-    .hero .eyebrow {
-      color: #b6afff;
-    }
+    .hero .eyebrow { color: #b6afff; }
 
     .hero h1 {
       font-size: clamp(38px, 5.3vw, 62px);
@@ -197,9 +174,7 @@
       margin: 18px 0;
     }
 
-    .hero h1 span {
-      color: #a99cff;
-    }
+    .hero h1 span { color: #a99cff; }
 
     .hero-copy {
       color: #c5c5d9;
@@ -230,7 +205,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
     }
 
     .visual-card {
@@ -281,7 +255,6 @@
       font-size: 12px;
     }
 
-    /* TRUST STRIP */
     .trust-strip {
       background: #f0efff;
       padding: 23px 0;
@@ -333,9 +306,7 @@
     }
 
     /* ABOUT */
-    .about {
-      background: var(--light);
-    }
+    .about { background: var(--light); }
 
     .about-grid {
       display: grid;
@@ -378,11 +349,9 @@
       margin-bottom: 15px;
     }
 
-    .about-panel p {
-      color: #e3e0ff;
-    }
+    .about-panel p { color: #e3e0ff; }
 
-    /* CTA */
+    /* CALL TO ACTION */
     .cta {
       background: white;
       text-align: center;
@@ -436,9 +405,7 @@
       box-shadow: 0 10px 35px #25204409;
     }
 
-    .field {
-      margin-bottom: 17px;
-    }
+    .field { margin-bottom: 17px; }
 
     .field label {
       display: block;
@@ -472,6 +439,7 @@
       color: var(--muted);
       font-size: 13px;
       margin-top: 12px;
+      min-height: 1.5em;
     }
 
     /* FOOTER */
@@ -489,15 +457,10 @@
       flex-wrap: wrap;
     }
 
-    footer .logo {
-      color: white;
-    }
+    footer .logo { color: white; }
+    footer p { font-size: 13px; }
 
-    footer p {
-      font-size: 13px;
-    }
-
-    /* WHATSAPP FLOATING BUTTON */
+    /* WHATSAPP BUTTON */
     .whatsapp {
       position: fixed;
       bottom: 22px;
@@ -512,9 +475,7 @@
       box-shadow: 0 6px 22px #00000025;
     }
 
-    .whatsapp:hover {
-      background: #116c3e;
-    }
+    .whatsapp:hover { background: #116c3e; }
 
     /* MOBILE */
     @media (max-width: 850px) {
@@ -524,39 +485,17 @@
         grid-template-columns: 1fr;
       }
 
-      .hero-grid {
-        gap: 35px;
-      }
-
-      .visual {
-        min-height: 290px;
-      }
-
-      .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .about-grid {
-        gap: 30px;
-      }
+      .hero-grid { gap: 35px; }
+      .visual { min-height: 290px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { gap: 30px; }
     }
 
     @media (max-width: 600px) {
-      .section {
-        padding: 65px 0;
-      }
-
-      .nav-inner {
-        min-height: 68px;
-      }
-
-      .logo {
-        font-size: 21px;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
+      .section { padding: 65px 0; }
+      .nav-inner { min-height: 68px; }
+      .logo { font-size: 21px; }
+      .menu-toggle { display: block; }
 
       .nav-links {
         display: none;
@@ -571,59 +510,25 @@
         gap: 15px;
       }
 
-      .nav-links.open {
-        display: flex;
-      }
-
-      .nav-links a {
-        padding: 5px 0;
-      }
-
-      .hero {
-        padding: 75px 0;
-      }
-
-      .hero h1 {
-        letter-spacing: -1px;
-      }
-
-      .hero-copy {
-        font-size: 16px;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-form {
-        padding: 20px;
-      }
-
-      .about-panel {
-        min-height: 240px;
-        padding: 28px;
-      }
-
-      .whatsapp {
-        right: 12px;
-        bottom: 12px;
-      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 5px 0; }
+      .hero { padding: 75px 0; }
+      .hero h1 { letter-spacing: -1px; }
+      .hero-copy { font-size: 16px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .contact-form { padding: 20px; }
+      .about-panel { min-height: 240px; padding: 28px; }
+      .whatsapp { right: 12px; bottom: 12px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *, *::before, *::after {
-        transition: none !important;
-      }
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
     }
   </style>
 </head>
 
 <body>
-
   <!-- NAVIGATION -->
   <header class="navbar">
     <div class="container nav-inner">
@@ -651,7 +556,6 @@
       <div class="container hero-grid">
         <div>
           <p class="eyebrow">Smart solutions. Real progress.</p>
-
           <h1>Build Your Brand.<br>
             <span>Grow Your Business.</span>
           </h1>
@@ -676,10 +580,12 @@
           <div class="visual-card">
             <p class="visual-label">YOUR NEXT CHAPTER</p>
             <p class="visual-title">Think Bigger.</p>
+
             <div class="visual-bars" aria-hidden="true">
               <span></span><span></span><span></span>
               <span></span><span></span>
             </div>
+
             <p class="visual-footer">
               Strategy · Creativity · Progress
             </p>
@@ -797,22 +703,23 @@
             <h3>Have a project in mind?</h3>
             <p>
               Fill out the form with your name, email and
-              message. Your default email application will
-              open with a prepared enquiry.
+              message. Your enquiry will be sent to our business email.
             </p>
+
             <p>
               <strong>Email:</strong><br>
-              dineshbana006@gmail.com
-            </p>
-            <p>
-              Replace the sample contact information with
-              your real business details before publishing.
+              <a href="mailto:dineshbana006@gmail.com">
+                dineshbana006@gmail.com
+              </a>
             </p>
           </div>
 
-          <form class="contact-form" 
-            id="contactForm">
-           
+          <form class="contact-form" id="contactForm">
+            <div class="field">
+              <label for="name">Your Name</label>
+              <input id="name" name="name" type="text"
+                     required autocomplete="name"
+                     placeholder="Your name">
             </div>
 
             <div class="field">
@@ -829,7 +736,7 @@
             </div>
 
             <button class="btn" type="submit">
-              Prepare Enquiry ↗
+              Send Enquiry ↗
             </button>
 
             <p class="form-status" id="formStatus"
@@ -849,7 +756,7 @@
     </div>
   </footer>
 
-  <!-- WHATSAPP BUTTON: UPDATE THE NUMBER IN JAVASCRIPT -->
+  <!-- WHATSAPP BUTTON -->
   <a class="whatsapp" id="whatsappLink"
      href="https://wa.me/918302502113"
      target="_blank" rel="noopener noreferrer">
@@ -863,11 +770,9 @@
 
     menuToggle.addEventListener("click", function () {
       const isOpen = navLinks.classList.toggle("open");
-
-      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
     });
 
-    // Close the mobile menu after clicking a navigation link
     navLinks.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
         navLinks.classList.remove("open");
@@ -879,70 +784,76 @@
     document.getElementById("year").textContent =
       new Date().getFullYear();
 
-    // 3. Contact form opens a pre-filled email draft
+    // 3. Contact form: send enquiry to email using FormSubmit
     const contactForm = document.getElementById("contactForm");
     const formStatus = document.getElementById("formStatus");
-
-    // CHANGE THIS TO YOUR REAL BUSINESS EMAIL
     const businessEmail = "dineshbana006@gmail.com";
 
-    
-contactForm.addEventListener("submit", async function (event) {
-  event.preventDefault();
+    contactForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
 
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
 
-  if (!name || !email || !message) {
-    formStatus.textContent = "Please complete all fields.";
-    return;
-  }
-
-  formStatus.textContent = "Sending your enquiry...";
-
-  try {
-    const response = await fetch(
-      "https://formsubmit.co/ajax/" + businessEmail,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify({
-          name: name,
-          email: email,
-          message: message,
-          _subject: "New BrightBusiness Enquiry",
-          _template: "table"
-        })
+      if (!name || !email || !message) {
+        formStatus.textContent = "Please complete all fields.";
+        return;
       }
-    );
 
-    const result = await response.json();
+      const submitButton =
+        contactForm.querySelector('button[type="submit"]');
 
-    if (!response.ok || result.success === "false") {
-      throw new Error("Email could not be sent");
-    }
+      submitButton.disabled = true;
+      formStatus.textContent = "Sending your enquiry...";
 
-    formStatus.textContent =
-      "Enquiry submitted! Please check your email.";
-    contactForm.reset();
+      try {
+        const response = await fetch(
+          "https://formsubmit.co/ajax/" + encodeURIComponent(businessEmail),
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+            },
+            body: JSON.stringify({
+              name: name,
+              email: email,
+              message: message,
+              _subject: "New BrightBusiness Enquiry",
+              _template: "table"
+            })
+          }
+        );
 
-  } catch (error) {
-    formStatus.textContent =
-      "Could not send. Please try again.";
-  }
-});
+        const result = await response.json();
+
+        if (
+          !response.ok ||
+          result.success === "false" ||
+          result.success === false
+        ) {
+          throw new Error("Email could not be sent");
+        }
+
+        formStatus.textContent =
+          "Thanks! Your enquiry has been submitted.";
+
+        contactForm.reset();
+
+      } catch (error) {
+        formStatus.textContent =
+          "Could not send. Please try again or email us directly.";
+      } finally {
+        submitButton.disabled = false;
+      }
+    });
+
     // 4. WhatsApp button
-    // Replace the example digits with your real WhatsApp number.
-    // Use country code + number, digits only, with no + or spaces.
     const whatsappNumber = "918302502113";
 
     document.getElementById("whatsappLink").href =
       "https://wa.me/" + whatsappNumber;
   </script>
-
 </body>
 </html>
